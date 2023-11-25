@@ -20,6 +20,10 @@ RUN yarn global add pm2
 
 COPY package.json yarn.lock ./
 
+# Clean Yarn cache
+RUN yarn cache clean
+
+# Install dependencies
 RUN yarn install
 
 COPY . .
